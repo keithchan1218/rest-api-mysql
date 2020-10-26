@@ -9,6 +9,9 @@ src/_drafts
 package-lock.json
 /dist
 
+# MySQL config file
+mysql-config.js
+
 # local env files
 .env.local
 .env.*.local
