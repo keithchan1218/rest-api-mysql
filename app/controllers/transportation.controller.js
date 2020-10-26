@@ -3,37 +3,33 @@ const Transportation = db.Transportation;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
-    // Validate request
+    // validation
     if (!req.body.name) {
         res.status(400).send({
-            message: "Content can not be empty!"
+            message: "Name cannot be empty!"
         });
         return;
     }
 
-    // Create a Tutorial
+    // create the transportation item
     const item = {
         name: req.body.name,
         capacity: req.body.capacity,
         enabled: req.body.enabled ? req.body.enabled : false
     };
 
-    // Save Tutorial in the database
+    // DB Action: save the item to table
     console.log('00000');
     Transportation.create(item)
         .then(data => {
-            console.log('111111');
             res.send(data);
         })
         .catch(err => {
-            console.log('222222');
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Tutorial."
+                    err.message || "Some error occurred while creating the transportation."
             });
         });
-
-        console.log('333333');
 };
 
 exports.findAll = (req, res) => {
