@@ -19,7 +19,6 @@ exports.create = (req, res) => {
     };
 
     // DB Action: save the item to table
-    console.log('00000');
     Transportation.create(item)
         .then(data => {
             res.send(data);
