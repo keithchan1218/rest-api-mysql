@@ -26,6 +26,7 @@ app.get('/',(req,res)=>{
     });
 });
 
+// Add our transportion routes
 require("./app/routes/transportation.routes")(app);
 
 // Handle dynamic port

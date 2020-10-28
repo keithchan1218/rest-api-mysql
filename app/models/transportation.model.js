@@ -1,3 +1,5 @@
+
+// Define Transportation
 module.exports = (sequelize, Sequelize) => {
     const Transportation = sequelize.define("transportation", {
         name: {

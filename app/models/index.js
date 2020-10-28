@@ -1,3 +1,5 @@
+
+// DB connection using Sequelize
 const dbConfig = require('../config/mysql-config');
 
 const Sequelize = require('sequelize');
@@ -19,6 +21,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+// use Transportation class
 db.Transportation = require("./transportation.model")(sequelize, Sequelize);
 
 module.exports = db;

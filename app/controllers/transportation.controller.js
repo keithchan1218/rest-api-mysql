@@ -1,9 +1,9 @@
 const db = require("../models");
 const Transportation = db.Transportation;
-const Op = db.Sequelize.Op;
+const Op = db.Sequelize.Op; // SQL logical operator shortcut
 
 exports.create = (req, res) => {
-    // validation
+    // Validation
     if (!req.body.name) {
         res.status(400).send({
             message: "Name cannot be empty!"
@@ -11,7 +11,7 @@ exports.create = (req, res) => {
         return;
     }
 
-    // create the transportation item
+    // Create the transportation item
     const item = {
         name: req.body.name,
         capacity: req.body.capacity,
